@@ -14,15 +14,17 @@ class LoginView extends GetWidget<AuthViewModel> {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.0,
-      ),
+      // backgroundColor: Colors.white,
+      // appBar: AppBar(
+      //   backgroundColor: Colors.white,
+      //   elevation: 0.0,
+      // ),
       body: Padding(
         padding: const EdgeInsets.only(
-          top: 50,
+          top: 100,
           right: 20,
           left: 20,
         ),
@@ -59,7 +61,7 @@ class LoginView extends GetWidget<AuthViewModel> {
                   color: Colors.grey,
                 ),
                 SizedBox(
-                  height: 30,
+                  height: height * .01,
                 ),
                 CustomTextFormField(
                   text: 'Email',
@@ -74,7 +76,7 @@ class LoginView extends GetWidget<AuthViewModel> {
                   },
                 ),
                 SizedBox(
-                  height: 40,
+                  height: height * .02,
                 ),
                 CustomTextFormField(
                   text: 'Password',
@@ -89,7 +91,7 @@ class LoginView extends GetWidget<AuthViewModel> {
                   },
                 ),
                 SizedBox(
-                  height: 20,
+                  height: height * .01,
                 ),
                 CustomText(
                   text: 'Forgot Password?',
@@ -97,7 +99,7 @@ class LoginView extends GetWidget<AuthViewModel> {
                   alignment: Alignment.topRight,
                 ),
                 SizedBox(
-                  height: 15,
+                  height: height * .025,
                 ),
                 CustomButton(
                   onPress: () {
@@ -110,14 +112,14 @@ class LoginView extends GetWidget<AuthViewModel> {
                   text: 'SIGN IN',
                 ),
                 SizedBox(
-                  height: 40,
+                  height: height * .02,
                 ),
                 CustomText(
                   text: '-OR-',
                   alignment: Alignment.center,
                 ),
                 SizedBox(
-                  height: 40,
+                  height: height * .02,
                 ),
                 CustomButtonSocial(
                   text: 'Sign In with Facebook',
@@ -127,7 +129,7 @@ class LoginView extends GetWidget<AuthViewModel> {
                   imageName: 'assets/images/facebook.png',
                 ),
                 SizedBox(
-                  height: 40,
+                  height: height * .03,
                 ),
                 CustomButtonSocial(
                   text: 'Sign In with Google',
