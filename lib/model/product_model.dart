@@ -3,13 +3,13 @@ import 'package:flutter/cupertino.dart';
 
 class ProductModel {
   String name, image, description, size, price;
-  // Color color;
+  Color color;
 
   ProductModel(
       {this.name,
       this.image,
       this.description,
-      // this.color,
+      this.color,
       this.size,
       this.price});
 
@@ -21,7 +21,7 @@ class ProductModel {
     name = map['name'];
     image = map['image'];
     description = map['description'];
-    // color = HexColor.fromHex(map['color']);
+    color = HexColor.fromHex(map['color']);
     size = map['size'];
     price = map['price'];
   }
@@ -31,7 +31,7 @@ class ProductModel {
       'name': name,
       'image': image,
       'description': description,
-      // 'color': color,
+      'color': color,
       'size': size,
       'price': price,
     };

@@ -19,10 +19,7 @@ class DetailsView extends StatelessWidget {
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: constraints.maxHeight * 0.35,
-                child: Image.network(
-                  model.image,
-                  fit: BoxFit.fill,
-                ),
+                child: Image.network(model.image, fit: BoxFit.fill),
               ),
               SizedBox(
                 height: 15,
@@ -86,7 +83,7 @@ class DetailsView extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       border: Border.all(color: Colors.grey),
                                       borderRadius: BorderRadius.circular(20),
-                                      //  color: model.color,
+                                      color: model.color,
                                     ),
                                   )
                                 ],

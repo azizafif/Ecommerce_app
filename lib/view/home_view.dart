@@ -6,69 +6,59 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeView extends StatelessWidget {
-  final List<String> names = <String>[
-    'men',
-    's',
-    's',
-    's',
-    's',
-    's',
-    's',
-  ];
-// controller.loading.value
-//           ? Center(child: CircularProgressIndicator())
-//           :
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeViewModel>(
       init: Get.find(),
-      builder: (controller) => Scaffold(
-        body: SingleChildScrollView(
-          child: Container(
-            padding: EdgeInsets.only(top: 50, left: 20, right: 20),
-            child: Column(
-              children: [
-                Text(
-                  'Shoppy',
-                  style: TextStyle(color: Colors.black, fontSize: 30),
+      builder: (controller) => controller.loading.value
+          ? Center(child: CircularProgressIndicator())
+          : Scaffold(
+              body: SingleChildScrollView(
+                child: Container(
+                  padding: EdgeInsets.only(top: 50, left: 20, right: 20),
+                  child: Column(
+                    children: [
+                      Text(
+                        'Shoppy',
+                        style: TextStyle(color: Colors.black, fontSize: 30),
+                      ),
+                      SizedBox(height: 20),
+                      _searchTextFormField(),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      CustomText(
+                        text: "Categories",
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      _listViewCategory(),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CustomText(
+                            text: "Best Selling",
+                            fontSize: 18,
+                          ),
+                          CustomText(
+                            text: "See all",
+                            fontSize: 16,
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      _listViewProducts(),
+                    ],
+                  ),
                 ),
-                SizedBox(height: 20),
-                _searchTextFormField(),
-                SizedBox(
-                  height: 30,
-                ),
-                CustomText(
-                  text: "Categories",
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                _listViewCategory(),
-                SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CustomText(
-                      text: "Best Selling",
-                      fontSize: 18,
-                    ),
-                    CustomText(
-                      text: "See all",
-                      fontSize: 16,
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                _listViewProducts(),
-              ],
+              ),
             ),
-          ),
-        ),
-      ),
     );
   }
 
