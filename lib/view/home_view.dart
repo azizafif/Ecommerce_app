@@ -25,9 +25,14 @@ class HomeView extends StatelessWidget {
       builder: (controller) => Scaffold(
         body: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsets.only(top: 100, left: 20, right: 20),
+            padding: EdgeInsets.only(top: 50, left: 20, right: 20),
             child: Column(
               children: [
+                Text(
+                  'Shoppy',
+                  style: TextStyle(color: Colors.black, fontSize: 30),
+                ),
+                SizedBox(height: 20),
                 _searchTextFormField(),
                 SizedBox(
                   height: 30,
