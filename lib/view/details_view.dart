@@ -1,8 +1,11 @@
 import 'package:ecommerce_app/constance.dart';
+import 'package:ecommerce_app/core/view_model/cart_view_model.dart';
+import 'package:ecommerce_app/model/cart_product_model.dart';
 import 'package:ecommerce_app/model/product_model.dart';
 import 'package:ecommerce_app/view/widgets/custom_buttom.dart';
 import 'package:ecommerce_app/view/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class DetailsView extends StatelessWidget {
   ProductModel model;
@@ -130,14 +133,26 @@ class DetailsView extends StatelessWidget {
                         )
                       ],
                     ),
-                    Container(
-                      padding: EdgeInsets.all(20),
-                      width: 180,
-                      height: 100,
-                      child: CustomButton(
-                        onPress: () {},
-                        text: 'Add',
-                      ),
+                    GetBuilder<CartViewModel>(
+                      init: CartViewModel(),
+                      builder: (controller) {
+                        return Container(
+                          padding: EdgeInsets.all(20),
+                          width: 180,
+                          height: 100,
+                          child: CustomButton(
+                            onPress: () {
+                              controller.addProduct(CartProductModel(
+                                name: model.name,
+                                image: model.image,
+                                price: model.price,
+                                quantity: 1,
+                              ));
+                            },
+                            text: 'Add',
+                          ),
+                        );
+                      },
                     ),
                   ],
                 ),

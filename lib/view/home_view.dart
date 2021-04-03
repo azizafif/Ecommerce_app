@@ -1,7 +1,7 @@
 import 'package:ecommerce_app/constance.dart';
 import 'package:ecommerce_app/core/view_model/control_view_model.dart';
 import 'package:ecommerce_app/core/view_model/home_view_model.dart';
-import 'package:ecommerce_app/view/daetilas_view.dart';
+import 'package:ecommerce_app/view/details_view.dart';
 import 'package:ecommerce_app/view/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/core/service/firestore_user.dart';
 import 'package:ecommerce_app/model/user_model.dart';
+import 'package:ecommerce_app/view/control_view.dart';
 import 'package:ecommerce_app/view/home_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +50,7 @@ class AuthViewModel extends GetxController {
 
     await _auth.signInWithCredential(credential).then((user) {
       saveUser(user);
-      Get.offAll(HomeView());
+      Get.offAll(ControlView());
     });
   }
 
@@ -106,5 +107,9 @@ class AuthViewModel extends GetxController {
       name: name == null ? user.user.displayName : name,
       pic: '',
     ));
+  }
+
+  void logout() async {
+    await FirebaseAuth.instance.signOut();
   }
 }
