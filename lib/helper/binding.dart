@@ -3,6 +3,7 @@ import 'package:ecommerce_app/core/view_model/cart_view_model.dart';
 import 'package:ecommerce_app/core/view_model/control_view_model.dart';
 import 'package:ecommerce_app/core/view_model/home_view_model.dart';
 import 'package:ecommerce_app/helper/local_storage_data.dart';
+import 'package:ecommerce_app/view/profile_view.dart';
 import 'package:get/get.dart';
 
 class Binding extends Bindings {
@@ -13,5 +14,6 @@ class Binding extends Bindings {
     Get.lazyPut(() => HomeViewModel());
     Get.lazyPut(() => CartViewModel());
     Get.lazyPut(() => LocalStorageData());
+    Get.lazyPut(() => ProfileView());
   }
 }

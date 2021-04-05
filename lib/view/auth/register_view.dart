@@ -45,7 +45,7 @@ class RegisterView extends GetWidget<AuthViewModel> {
                 ),
                 CustomTextFormField(
                   text: 'Name',
-                  hint: 'Pesa',
+                  hint: 'Aziz',
                   onSave: (value) {
                     controller.name = value;
                   },
@@ -60,7 +60,7 @@ class RegisterView extends GetWidget<AuthViewModel> {
                 ),
                 CustomTextFormField(
                   text: 'Email',
-                  hint: 'iamdavid@gmail.com',
+                  hint: 'azizafif@gmail.com',
                   onSave: (value) {
                     controller.email = value;
                   },
